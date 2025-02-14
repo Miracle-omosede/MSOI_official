@@ -50,7 +50,7 @@ const Hero = () => {
             </p>
 
             {/* CTA buttons */}
-            <div className="flex gap-[2rem] py-5">
+            <div className="flex flex-col md:flex-row gap-[2rem] py-5">
               <motion.a
                 initial={{ opacity: 0, y: "100%" }}
                 animate={{ opacity: 1, y: 0 }}
