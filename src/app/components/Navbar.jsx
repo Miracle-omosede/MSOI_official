@@ -63,6 +63,9 @@ const Navbar = () => {
                             </div>
                         </li>
                         <li className="nav-link relative">
+                            <a href='#' className='link-item'>Programs</a>
+                        </li>
+                        <li className="nav-link relative">
                             <a href='#' className='link-item'><span>Housing</span> &nbsp;
                                 <ChevronDown size={14} strokeWidth={2.25} className='i'/>
                             </a>
@@ -85,7 +88,7 @@ const Navbar = () => {
                             </div>
                         </li>
                         <li className="nav-link relative">
-                            <a href='#' className='link-item'><span>Take Action</span><ChevronDown size={14} strokeWidth={2.25} className='i'/></a>
+                            <a href='#' className='link-item'><span>Take Action</span> &nbsp;<ChevronDown size={14} strokeWidth={2.25} className='i'/></a>
                             
                             <div className='dropdown-menu absolute top-[100%] left-0  w-[10rem] opacity-0 bg-white transform transition-[.3s]'>
                                 <ul className='relative'>
@@ -104,7 +107,23 @@ const Navbar = () => {
                             </div>
                         </li>
                         <li className="nav-link relative">
-                            <a href='#' className='link-item'>What's New</a>
+                            <a href='#' className='link-item'><span>What's New</span> &nbsp;<ChevronDown size={14} strokeWidth={2.25} className='i'/>
+                            </a>
+                            <div className='dropdown-menu absolute top-[100%] left-0  w-[10rem] opacity-0 bg-white transform transition-[.3s]'>
+                                <ul className='relative'>
+                                    <li className="dropdown-link">
+                                        <a href='#' className='dropdown-link-item'>Our stories</a>
+                                    </li>
+                                    <li className="dropdown-link">
+                                    <a href='#' className='dropdown-link-item'>Videos</a>
+                                    </li>
+                                    <li className="dropdown-link">
+                                    <a href='#' className='dropdown-link-item'>Blog</a>
+                                    </li>
+                                  
+                                    <div className="arrow absolute w-[11px] h-[11px] top-[-5.5px] left-[32px] bg-white rotate-[45deg] cursor-pointer transition-[.3s]"></div>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
             </nav>
