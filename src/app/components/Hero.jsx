@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import SplitType from "split-type";
 import { useAnimate, motion, stagger } from "motion/react";
+import { HandCoins } from "lucide-react";
 
 const Hero = () => {
   const [titleScope, titleAnimate] = useAnimate();
@@ -50,7 +51,7 @@ const Hero = () => {
             </p>
 
             {/* CTA buttons */}
-            <div className="flex flex-col md:flex-row gap-[2rem] py-5">
+            <div className="flex flex-col items-start justify-start md:flex-row gap-[2rem] py-5">
               <motion.a
                 initial={{ opacity: 0, y: "100%" }}
                 animate={{ opacity: 1, y: 0 }}
@@ -59,9 +60,11 @@ const Hero = () => {
                   delay: 1.75,
                 }}
                 href="#"
-                className="border border-light bg-light uppercase text-white font-lato font-bold py-[16px] px-[32px] hover:text-light md:text-[15px] text-[13px] tracking-[2.5px] hover:border-light hover:bg-white transition-all delay-75"
+                className="border flex border-light bg-light uppercase text-white font-lato font-bold py-[16px] px-[32px] hover:text-light md:text-[15px] text-[13px] tracking-[2.5px] hover:border-light hover:bg-white transition-all delay-75 items-center justify-center"
               >
-                <span>donate.</span>
+                <HandCoins/>
+                &nbsp;
+                <span>donate</span>
               </motion.a>
               <motion.a
                 initial={{ opacity: 0, y: "100%" }}
@@ -71,7 +74,7 @@ const Hero = () => {
                   delay: 1.75,
                 }}
                 href="#"
-                className="border border-white bg-white uppercase text-light font-lato font-bold py-[16px] px-[32px] hover:text-white md:text-[15px] text-[13px] tracking-[2.5px] hover:border-light hover:bg-light transition-all delay-75"
+                className="border border-white bg-white uppercase text-light font-lato font-bold py-[20px] px-[32px] hover:text-white md:text-[15px] text-[13px] tracking-[2.5px] hover:border-light hover:bg-light transition-all delay-75"
               >
                 <span>get support today.</span>
               </motion.a>
