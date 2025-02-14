@@ -71,9 +71,9 @@ const Navbar = () => {
                             </a>
                             <div className='dropdown-menu absolute top-[100%] left-0  w-[10rem] opacity-0 bg-white transform transition-[.3s]'>
                                 <ul className='relative'>
-                                    <li className="dropdown-link">
+                                    {/* <li className="dropdown-link">
                                         <a href='#' className='dropdown-link-item'>About MSOI</a>
-                                    </li>
+                                    </li> */}
                                     <li className="dropdown-link">
                                     <a href='#' className='dropdown-link-item'>Locations</a>
                                     </li>
