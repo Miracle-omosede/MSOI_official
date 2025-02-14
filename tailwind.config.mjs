@@ -7,10 +7,20 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      backgroundImage: {
+        'hero-background': "url('/src/app/assets/img1.jpg')",
       },
+      fontFamily: {
+        "dm-sans": ["DM Sans", "serif"],
+        "poppins": ["Poppins", "serif"],
+        "lato": ["lato", "serif"],
+      },
+      colors: {
+        'light':'#2f7c49',
+        'green':'#245131',
+        'dark':'#142618',
+        'dark-green':'#204e50',
+      }
     },
   },
   plugins: [],

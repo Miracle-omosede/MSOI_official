@@ -1,21 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.hero-banner {
+  background: linear-gradient(#080f0aca, #142a1a66), url("/public/img1.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.bg-service {
+  background: linear-gradient(#080f0a83, #142a1a66), url("./assets/ProjectCoverLarge2.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.about-card {
+  background: linear-gradient(#080f0a83, #142a1a66), url("./assets/ProjectCoverLarge.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.blog-img-overlay {
+  background: linear-gradient(#080f0a39, #142a1aad);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+}
+
+@layer components{
+  .link-item {
+      @apply md:hover:scale-[1.1] transition-[.5s] leading-[3rem] text-black py-0 px-[1rem] tracking-[1px] text-[.90rem] flex items-center justify-center font-lato uppercase font-bold;
+  }
+  .dropdown-link-item {
+      @apply flex bg-white text-[#273744]/50 py-[.5rem] px-[1rem] text-[.9rem] items-center transition-[.3s] hover:bg-black hover:text-white font-bold capitalize;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.donate-btn {
+  border: 1px solid rgb(150, 150, 150);
 }
+/* 
+.link-item {
+  @apply leading-[3rem] text-black px-0 py-[.8rem] tracking-[1px] text-[.95rem] flex items-center justify-center;
+} */
+
+.nav-link:hover {
+  transform: scale(1.1);
+}
+
+.dropdown-meun {
+  transform: translate(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.dropdown-link i {
+  transform: rotate(-90deg);
+}
+
+.dropdown-meun ul {
+  position: relative;
+}
+
+.dropdown-link:not(:nth-last-child(2)){
+  border-bottom: 1px solid #ededef;
+}
+
+.dropdown-link:first-child:hover~ .arrow {
+  background-color: black ;
+}
+
+.dropdown-link:first-child{
+  border-top: 0;
+}
+
+.dropdown-meun {
+  border-top: 0 ;
+}
+
+.arrow {
+  z-index: -1;
+}
+
+.nav-link:hover > .dropdown-menu, .dropdown-link:hover > .dropdown-menu {
+  transform: translate(0, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hamburger-menu div{
+  z-index: 1001;
+  transition: .5s;
+  border-radius: 2px;
+}
+
+.hamburger-menu div::before, .hamburger-menu div::after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #2f7c49;
+  border-radius: 3px;
+  transition: .5s;
+}
+
+/* .hamburger-menu div::before{
+  transform: translateY(-7px);
+} */
+
+.hamburger-menu div::after{
+  transform: translateY(7px);
+}
+
+#check {
+  /* position: absolute; */
+  /* top: 50%; */
+  /* right: 2rem;
+  transform: translateY(-50px); */
+  position: absolute;
+  right: 2rem;
+  top: 4px;
+  display: none;
+  justify-items: center;
+  align-items: end;
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 9000;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#check:checked ~ .hamburger-menu-container .hamburger-menu div {
+  background-color: transparent;
+}
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:before {
+  transform: translateY(0) rotate(-45deg);
+}
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:after {
+  transform: translateY(0) rotate(45deg);
+}
+
+@media (max-width: 920px) {
+  .hamburger-menu-container {
+      display: flex;
+  }
+
+  #check{
+      display: block;
+  }
+
+  .nav-btns {
+      position: fixed;
+      height: calc(100vh - 5rem);
+      top: 6rem;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      /* overflow-x: hidden; */
+      overflow-y: auto;
+      /* transform: translateX(100%); */
+      transition: .65s;
+  }
+
+  /* #check:checked~.nav-btns{
+      transform: translateX(0);
+  } */
+
+  .nav-links {
+      flex: intial;
+      width: 100%;
+      background-color: white;
+  }
+
+  .nav-links > ul {
+      flex-direction: column;
+  }
+
+  .nav-link {
+      width: 100%;
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+    
+  }
+
+  .nav-link > a {
+      line-height: 1;
+      padding: 1.6rem 2rem;
+      width: 100%;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+  }
+
+  .nav-link:hover > a {
+      background-color: black;
+      color: white
+  }
+
+  .dropdown-menu {
+      position: initial;
+      top: initial;
+      left: initial;
+      transform: initial;
+      opacity: 1;
+      pointer-events: auto;
+      width: 100%;
+      padding: 0;
+      background-color: white;
+      display: none;
+  }
+
+  .nav-link:hover {
+      transform: none;
+  }
+
+  .nav-link:hover > .dropdown-menu, .dropdown-link:hover > .dropdown-menu {
+      display: block;
+  }
+
+  .nav-link:hover > a > .i, .dropdown-link:hover > a > .i {
+      transform: rotate(360deg);
+  }
+
+  .dropdown-link > a {
+      background-color: transparent;
+      color: #2f7c49;
+      padding: 1.2rem 2rem;
+  }
+
+  .dropdown-menu .dropdown-link > a {
+      padding: 1.2rem 2rem 1.2rem 3rem;
+  }
+
+  .dropdown-link:not(:nth-last-child(2)){
+      border-bottom: 1px solid #ededef;
+  }
+
+  .arrow {
+      z-index: 1;
+      background-color: #ffffff;
+      left: 10%;
+      /* transition: .5s; */
+  }
+
+  .nav-link:hover > a > .dropdown-menu > ul > .arrow{
+      background-color: white;
+  }
+  .dropdown-link:hover > a {
+      background-color: gray;
+  }
+
+  .nav-link > a > .i {
+      font-size: 1.1rem;
+      transform: rotate(-90deg);
+      transition: .7s;
+  }
+
+  .link-item:hover{
+      transform: none !important;
+  }
+
+  .dropdown-menu .i {
+      font-size: 1rem;
+      transition: .7s;
+  }
+}
+
+
+.btn {
+  color: #245131;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #245131;
+  padding: 7px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #245131;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 160%;
+}
+
+
+
+
+.btn {
+  color: #2f7c49;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #2f7c49;
+  padding: 7px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #2f7c49;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 160%;
+}
+
+.line {
+  @apply overflow-hidden;
+}
+
+.word {
+  @apply translate-y-full;
+}
+
+.unordered-styling {
+  @apply font-dm-sans py-5 font-semibold text-[12px] flex flex-col gap-2;
+}
+
+.footer-heading {
+  @apply font-lato text-white uppercase font-light tracking-[2.4px];
+}
+
+.footer-link {
+  @apply hover:text-white text-white/90 flex items-center gap-10 cursor-pointer hover:underline;
+}
+
+
+
+.slick-slide > div {
+  margin: 0 30px;
+}
+
+.slick-slide>div:nth-child(1) {
+  margin-left: 0;
+}
+
+.slick-list {
+  margin-right: -30px;
+}
+
+/* youtube */
+/* Try hiding the YouTube title bar and UI elements */
+.ytp-chrome-top {
+  display: none !important;
+}
+
+.ytp-show-cards-title {
+  display: none !important;
+}
+
+.ytp-title {
+  display: none !important;
+}
+
+
+
