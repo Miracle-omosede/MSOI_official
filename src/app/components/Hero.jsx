@@ -59,6 +59,18 @@ const Hero = () => {
                   delay: 1.75,
                 }}
                 href="#"
+                className="border border-light bg-light uppercase text-white font-lato font-bold py-[16px] px-[32px] hover:text-light md:text-[15px] text-[13px] tracking-[2.5px] hover:border-light hover:bg-white transition-all delay-75"
+              >
+                <span>donate.</span>
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: "100%" }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 1.75,
+                }}
+                href="#"
                 className="border border-white bg-white uppercase text-light font-lato font-bold py-[16px] px-[32px] hover:text-white md:text-[15px] text-[13px] tracking-[2.5px] hover:border-light hover:bg-light transition-all delay-75"
               >
                 <span>get support today.</span>

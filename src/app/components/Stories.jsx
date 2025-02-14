@@ -1,6 +1,7 @@
 import React from 'react'
 import StorySlider from './StoriesSlider'
 import YoutubeVid from './YoutubeVid'
+import {motion} from "motion/react"
 
 const Stories = () => {
   return (
@@ -17,6 +18,8 @@ const Stories = () => {
         <div className='mx-auto'>
         <YoutubeVid/>
         </div>
+
+    
     </section>
   )
 }

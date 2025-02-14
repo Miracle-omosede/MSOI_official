@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
+import { HandCoins } from "lucide-react";
 
 const BlogDetails = [
   {
@@ -87,6 +88,17 @@ const StorySlider = () => {
           <SliderCard key={index} blog={blog} />
         ))}
       </Slider>
+
+      <div className="flex items-center justify-center my-5">
+        <a
+
+                href="#"
+                className="border flex items-center justify-center border-light bg-light uppercase text-white font-lato font-bold py-[16px] px-[32px] hover:text-light md:text-[15px] text-[13px] tracking-[2.5px] hover:border-light hover:bg-white transition-all delay-75"
+              >
+                <HandCoins />&nbsp;
+                <span>donate.</span>
+              </a>
+        </div>
 
       {/* Progress Bar */}
       <div className="h-[2px] my-5 bg-gray-300 w-[250px] absolute -top-[15px] right-[5%]">
